@@ -42,8 +42,10 @@ class MainFragment : Fragment(), MainListListener {
     override fun onItemClick(view: View, position: Int) {
         Toast.makeText(activity, "点击了第[$position]个按钮", Toast.LENGTH_SHORT).show()
         val fm = fragmentManager
-        val ft = fm.beginTransaction()
-        ft.replace(R.id.action_container, ChartFragment())
+        fm!!.popBackStack()
+        val ft = fm!!.beginTransaction()
+        ft.addToBackStack(null)
+        ft.replace(R.id.fragment, ChartFragment())
         ft.commit()
     }
 }

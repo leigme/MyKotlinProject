@@ -41,6 +41,13 @@ android {
     }
 }
 
+/**
+ * 解决数据绑定冲突
+ */
+kapt {
+    generateStubs = true
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -55,6 +62,7 @@ dependencies {
     /******************* 功能包 *******************/
     implementation "android.arch.lifecycle:extensions:1.0.0"
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
+    kapt "com.android.databinding:compiler:2.3.0"
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }

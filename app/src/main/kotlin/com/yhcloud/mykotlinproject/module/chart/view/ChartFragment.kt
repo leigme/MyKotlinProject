@@ -11,6 +11,7 @@ import com.yhcloud.mykotlinproject.base.AdaptListener
 import com.yhcloud.mykotlinproject.module.chart.adapter.ChartAdapter
 import com.yhcloud.mykotlinproject.module.chart.bean.ChartBean
 import kotlinx.android.synthetic.main.fragment_chart.*
+import kotlinx.android.synthetic.main.fragment_chart.view.*
 
 /**
  * 图表列表页面
@@ -32,8 +33,8 @@ class ChartFragment: BaseFragment("安卓图表示例"), AdaptListener {
 
         val adapter = ChartAdapter(chartBeans, this)
 
-        rvChart.layoutManager = GridLayoutManager(container!!.context, 3)
-        rvChart.adapter = adapter
+        view.rvChart.layoutManager = GridLayoutManager(activity, 3)
+        view.rvChart.adapter = adapter
 
         return view
     }

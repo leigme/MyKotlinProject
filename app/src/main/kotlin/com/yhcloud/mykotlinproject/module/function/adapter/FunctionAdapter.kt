@@ -1,4 +1,4 @@
-package com.yhcloud.mykotlinproject.module.function
+package com.yhcloud.mykotlinproject.module.function.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.yhcloud.mykotlinproject.base.AdaptListener
 import com.yhcloud.mykotlinproject.R
+import com.yhcloud.mykotlinproject.module.function.bean.FunctionBean
 import kotlinx.android.synthetic.main.item_list_main.view.*
 
 /**

@@ -1,4 +1,4 @@
-package com.yhcloud.mykotlinproject.module.function
+package com.yhcloud.mykotlinproject.module.function.view
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -9,6 +9,8 @@ import com.yhcloud.mykotlinproject.base.AdaptListener
 import com.yhcloud.mykotlinproject.base.BaseFragment
 import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.module.chart.view.ChartFragment
+import com.yhcloud.mykotlinproject.module.function.adapter.FunctionAdapter
+import com.yhcloud.mykotlinproject.module.function.bean.FunctionBean
 import com.yhcloud.mykotlinproject.module.login.view.LoginFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 

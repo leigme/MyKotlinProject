@@ -1,4 +1,4 @@
-package com.yhcloud.mykotlinproject.module.function
+package com.yhcloud.mykotlinproject.module.function.bean
 
 import com.yhcloud.mykotlinproject.base.BaseFragment
 

@@ -1,5 +1,6 @@
 package com.yhcloud.mykotlinproject.module.login.data
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.databinding.ObservableField
@@ -19,13 +20,14 @@ import com.yhcloud.mykotlinproject.module.login.SnackbarMessage
 
 class LoginModel(application: Application): AndroidViewModel(application) {
 
+    @SuppressLint("StaticFieldLeak")
     private val mContext = application.applicationContext
 
-    private val mOpenUserList: SingleLiveEvent<String> = SingleLiveEvent()
-    private val mSnackbarText = SnackbarMessage()
+    val mOpenUserList: SingleLiveEvent<String> = SingleLiveEvent()
+    val mSnackbarText = SnackbarMessage()
 
-    open val loginName = ObservableField<String>()
-    open val loginPass = ObservableField<String>()
+    val loginName = ObservableField<String>()
+    val loginPass = ObservableField<String>()
 
 
     private fun login(loginName: String, loginPass: String) {
@@ -39,15 +41,16 @@ class LoginModel(application: Application): AndroidViewModel(application) {
             return
         }
 
-        mOpenUserList.setValue("123456");
+        mOpenUserList.value = loginName
 
     }
 
     fun login() {
-        login(loginName.get(), loginPass.get())
+        if (null != loginName.get() && null != loginPass.get()) {
+            login(loginName.get(), loginPass.get())
+            println("用户账号是: ${loginName.get()},用户密码是: ${loginPass.get()}")
+        }
     }
-
-
 }
  
  

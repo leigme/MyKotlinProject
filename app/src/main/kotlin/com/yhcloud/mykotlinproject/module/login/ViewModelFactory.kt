@@ -9,41 +9,43 @@ import com.yhcloud.mykotlinproject.module.login.data.LoginModel
 
 
 /**
- *
+ * Kotlin单例工厂模式
  *
  * @author leig
  * @version 20170301
  *
  */
  
-class ViewModelFactory(application: Application): ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory(private val application: Application): ViewModelProvider.NewInstanceFactory() {
 
-    @Volatile private var INSTANCE: ViewModelFactory? = null
+    /**
+     * 伴生对象
+     * 定义单例工厂模式
+     *
+     */
+    companion object {
 
-    private var mApplication: Application = application
+        @SuppressLint("StaticFieldLeak")
+        private var vmf: ViewModelFactory? = null
 
-    fun getInstance(application: Application): ViewModelFactory {
-
-        if (INSTANCE == null) {
-            synchronized(ViewModelFactory::class.java) {
-                if (INSTANCE == null) {
-                    INSTANCE = ViewModelFactory(this.mApplication)
-                }
-            }
+        fun getInstance(application: Application): ViewModelFactory {
+            if(null == vmf) vmf = ViewModelFactory(application)
+            return vmf!!
         }
-        return this.INSTANCE!!
-    }
 
-    @VisibleForTesting
-    fun destroyInstance() {
-        INSTANCE = null
+        @VisibleForTesting
+        fun destroyInstance() {
+            vmf = null
+        }
+
+
     }
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginModel::class.java)) {
-
-            return LoginModel(this.mApplication) as T
+            return LoginModel(application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }
+
 }

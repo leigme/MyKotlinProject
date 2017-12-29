@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yhcloud.mykotlinproject.module.function.FunctionFragment"
+    tools:context="com.yhcloud.mykotlinproject.module.function.view.FunctionFragment"
     tools:showIn="@layout/activity_main">
 
     <android.support.v7.widget.RecyclerView

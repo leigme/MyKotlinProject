@@ -20,6 +20,6 @@ import android.view.View
 
     override fun onDestroy() {
         super.onDestroy()
-        activity!!.supportFragmentManager.popBackStack()
+        fragmentManager!!.popBackStack()
     }
 }

@@ -1,5 +1,7 @@
 package com.yhcloud.mykotlinproject.module.chart.bean
 
+import com.yhcloud.mykotlinproject.base.BaseFragment
+
 /**
  *
  *
@@ -12,5 +14,6 @@ data class ChartBean(
         val id: Int,
         val imageId: Int,
         val imageUrl: String,
-        val title: String
+        val fragment: BaseFragment,
+        val title: String = fragment.title
 )

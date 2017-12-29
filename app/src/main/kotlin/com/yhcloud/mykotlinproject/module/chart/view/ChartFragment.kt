@@ -41,15 +41,20 @@ class ChartFragment: BaseFragment("安卓图表示例"), AdaptListener {
 
     private fun initChartBeans(): List<ChartBean> {
         return listOf(
-                ChartBean(0, 0, "", "雷达图"),
-                ChartBean(1, 0, "", "散点图"),
-                ChartBean(2, 0, "", "饼状图"),
-                ChartBean(3, 0, "", "柱状图")
+                ChartBean(0, 0, "", BarChartFragment(), "雷达图"),
+                ChartBean(1, 0, "", BarChartFragment(), "散点图"),
+                ChartBean(2, 0, "", BarChartFragment(), "饼状图"),
+                ChartBean(3, 0, "", BarChartFragment(), "柱状图")
         )
     }
 
     override fun onItemClick(view: View, position: Int) {
-
+        val fm = fragmentManager
+        fm!!.popBackStack()
+        val ft = fm.beginTransaction()
+        ft.addToBackStack(null)
+        ft.replace(R.id.fragment, chartBeans[position].fragment)
+        ft.commit()
     }
 
     override fun onItemLongClick(view: View, position: Int): Boolean {

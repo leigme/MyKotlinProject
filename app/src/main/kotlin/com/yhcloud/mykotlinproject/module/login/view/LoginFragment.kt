@@ -12,7 +12,7 @@ import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.databinding.FragmentLoginBinding
 import com.yhcloud.mykotlinproject.module.login.ViewModelFactory
 import com.yhcloud.mykotlinproject.module.login.data.LoginModel
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlin.concurrent.thread
 
 /**
  * MVVM模式的登录页面
@@ -46,6 +46,11 @@ class LoginFragment: BaseFragment("登录页面") {
 
         binding.submit.setOnClickListener{ _ ->
             loginModel.login()
+        }
+
+        thread(start = true) {
+            Thread.sleep(3000)
+            loginModel.loginName.set("5678")
         }
 
         return binding.root

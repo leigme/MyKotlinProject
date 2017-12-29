@@ -1,16 +1,16 @@
-package com.yhcloud.mykotlinproject
+package com.yhcloud.mykotlinproject.base
 
 import android.view.View
 
 /**
- *
+ * 自定义点击事件回调接口
  *
  * @author leig
  * @version 20170301
  *
  */
  
-interface MainListListener {
+interface AdaptListener {
 
     fun onItemClick(view: View, position: Int)
 

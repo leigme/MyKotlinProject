@@ -1,0 +1,57 @@
+package com.yhcloud.mykotlinproject.module.chart.view
+
+import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.R
+import com.yhcloud.mykotlinproject.base.AdaptListener
+import com.yhcloud.mykotlinproject.module.chart.adapter.ChartAdapter
+import com.yhcloud.mykotlinproject.module.chart.bean.ChartBean
+import kotlinx.android.synthetic.main.fragment_chart.*
+
+/**
+ * 图表列表页面
+ *
+ * @author leig
+ * @version 20170301
+ *
+ */
+ 
+class ChartFragment: BaseFragment("安卓图表示例"), AdaptListener {
+
+    private val chartBeans = initChartBeans()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        val view = inflater.inflate(R.layout.fragment_chart, container, false)
+
+        view.setOnTouchListener(this)
+
+        val adapter = ChartAdapter(chartBeans, this)
+
+        rvChart.layoutManager = GridLayoutManager(container!!.context, 3)
+        rvChart.adapter = adapter
+
+        return view
+    }
+
+    private fun initChartBeans(): List<ChartBean> {
+        return listOf(
+                ChartBean(0, 0, "", "雷达图"),
+                ChartBean(1, 0, "", "散点图"),
+                ChartBean(2, 0, "", "饼状图"),
+                ChartBean(3, 0, "", "柱状图")
+        )
+    }
+
+    override fun onItemClick(view: View, position: Int) {
+
+    }
+
+    override fun onItemLongClick(view: View, position: Int): Boolean {
+        return false
+    }
+}

@@ -8,6 +8,13 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * 主程序入口
+ *
+ * @author leig
+ * @20170301
+ *
+ */
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +30,6 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        if (null == savedInstanceState) {
-            supportFragmentManager.beginTransaction().add(R.id.fragment, MainFragment()).commit()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

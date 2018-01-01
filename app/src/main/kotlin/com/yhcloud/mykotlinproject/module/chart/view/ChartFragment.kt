@@ -49,6 +49,7 @@ class ChartFragment: BaseFragment("安卓图表示例"), AdaptListener {
     }
 
     override fun onItemClick(view: View, position: Int) {
+        println("点击的是${chartBeans[position].title}")
         val fm = fragmentManager
         fm!!.popBackStack()
         val ft = fm.beginTransaction()

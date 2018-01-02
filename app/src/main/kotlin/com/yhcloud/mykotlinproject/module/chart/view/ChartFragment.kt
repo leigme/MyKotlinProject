@@ -43,8 +43,9 @@ class ChartFragment: BaseFragment("安卓图表示例"), AdaptListener {
         return listOf(
                 ChartBean(0, 0, "", BarChartFragment(), "雷达图"),
                 ChartBean(1, 0, "", BarChartFragment(), "散点图"),
-                ChartBean(2, 0, "", BarChartFragment(), "饼状图"),
-                ChartBean(3, 0, "", BarChartFragment(), "柱状图")
+                ChartBean(2, 0, "", LineChartFragment(), "折线图"),
+                ChartBean(3, 0, "", BarChartFragment(), "饼状图"),
+                ChartBean(4, 0, "", BarChartFragment(), "柱状图")
         )
     }
 

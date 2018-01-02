@@ -18,8 +18,4 @@ import android.view.View
         return true
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        fragmentManager!!.popBackStack()
-    }
 }

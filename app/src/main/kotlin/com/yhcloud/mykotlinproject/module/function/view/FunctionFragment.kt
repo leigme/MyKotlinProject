@@ -49,10 +49,10 @@ class FunctionFragment : BaseFragment("功能列表"), AdaptListener {
 
     override fun onItemClick(view: View, position: Int) {
         val fm = fragmentManager
-        fm!!.popBackStack()
-        val ft = fm.beginTransaction()
-        ft.addToBackStack(null)
+        val ft = fm!!.beginTransaction()
         ft.replace(R.id.fragment, functions[position].fragment)
+        ft.addToBackStack(null)
         ft.commit()
     }
+
 }

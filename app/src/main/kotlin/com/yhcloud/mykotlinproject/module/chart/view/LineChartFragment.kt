@@ -1,6 +1,5 @@
 package com.yhcloud.mykotlinproject.module.chart.view
 
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +10,7 @@ import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_line.view.*
 import com.github.mikephil.charting.components.Legend.LegendForm
-import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition
-import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -23,9 +19,8 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.github.mikephil.charting.utils.EntryXComparator
 import java.util.*
 
-
 /**
- *
+ * 折线图示例
  *
  * @author leig
  * @version 20170301
@@ -35,8 +30,6 @@ import java.util.*
 class LineChartFragment: BaseFragment("折线图") {
 
     private lateinit var chart: LineChart
-
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_line, container, false)
@@ -75,7 +68,7 @@ class LineChartFragment: BaseFragment("折线图") {
 //        yValue1.add(Entry(7f, 6f))
 //        yValue1.add(Entry(10f, 7f))
 
-        val dataSet = LineDataSet(yValues, "56565656")
+        val dataSet = LineDataSet(yValues, title)
 
         dataSet.color = Color.RED
         dataSet.setCircleColor(Color.RED)
@@ -120,7 +113,6 @@ class LineChartFragment: BaseFragment("折线图") {
         yAxisLeft.axisLineColor = Color.parseColor("#66CDAA")
         yAxisLeft.axisLineWidth = 5f
         yAxisLeft.setDrawGridLines(false)
-
 
         val yAxisRight = chart.axisRight
         yAxisRight.isEnabled = false

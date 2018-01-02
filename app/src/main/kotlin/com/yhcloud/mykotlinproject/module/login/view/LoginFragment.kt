@@ -12,6 +12,7 @@ import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.databinding.FragmentLoginBinding
 import com.yhcloud.mykotlinproject.module.login.ViewModelFactory
 import com.yhcloud.mykotlinproject.module.login.data.LoginModel
+import com.yhcloud.mykotlinproject.module.login.utils.SnackbarUtils
 import kotlin.concurrent.thread
 
 /**
@@ -41,7 +42,7 @@ class LoginFragment: BaseFragment("登录页面") {
         })
 
         loginModel.mSnackbarText.observe(this, Observer { message ->
-
+            SnackbarUtils.showSnackbar(binding.root, message!!)
         })
 
         binding.submit.setOnClickListener{ _ ->

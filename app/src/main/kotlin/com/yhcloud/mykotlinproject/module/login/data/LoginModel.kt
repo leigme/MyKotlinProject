@@ -29,7 +29,6 @@ class LoginModel(application: Application): AndroidViewModel(application) {
     val loginName = ObservableField<String>()
     val loginPass = ObservableField<String>()
 
-
     private fun login(loginName: String, loginPass: String) {
 
         if (TextUtils.isEmpty(loginName)) {
@@ -42,6 +41,7 @@ class LoginModel(application: Application): AndroidViewModel(application) {
         }
 
         mOpenUserList.value = loginName
+        mSnackbarText.value = loginName
 
     }
 

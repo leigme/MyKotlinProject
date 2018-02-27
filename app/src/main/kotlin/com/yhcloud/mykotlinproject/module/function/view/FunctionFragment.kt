@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.yhcloud.mykotlinproject.base.AdaptListener
 import com.yhcloud.mykotlinproject.base.BaseFragment
 import com.yhcloud.mykotlinproject.R
+import com.yhcloud.mykotlinproject.module.book.view.BookFragment
 import com.yhcloud.mykotlinproject.module.chart.view.ChartFragment
 import com.yhcloud.mykotlinproject.module.function.adapter.FunctionAdapter
 import com.yhcloud.mykotlinproject.module.function.bean.FunctionBean
@@ -36,10 +37,12 @@ class FunctionFragment : BaseFragment("功能列表"), AdaptListener {
         return view
     }
 
+    // 列表页数据
     private fun getFunction(): List<FunctionBean> {
         return listOf(
                 FunctionBean(0, LoginFragment()),
-                FunctionBean(1, ChartFragment())
+                FunctionBean(1, BookFragment()),
+                FunctionBean(2, ChartFragment())
         )
     }
 

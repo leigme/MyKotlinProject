@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.yhcloud.mykotlinproject.base.AdaptListener
+import com.yhcloud.mykotlinproject.base.listener.AdaptListener
 import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.module.chart.bean.ChartBean
 import kotlinx.android.synthetic.main.item_list_chart.view.*

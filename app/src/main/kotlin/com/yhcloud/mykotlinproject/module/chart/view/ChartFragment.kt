@@ -5,12 +5,11 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 import com.yhcloud.mykotlinproject.R
-import com.yhcloud.mykotlinproject.base.AdaptListener
+import com.yhcloud.mykotlinproject.base.listener.AdaptListener
 import com.yhcloud.mykotlinproject.module.chart.adapter.ChartAdapter
 import com.yhcloud.mykotlinproject.module.chart.bean.ChartBean
-import kotlinx.android.synthetic.main.fragment_chart.*
 import kotlinx.android.synthetic.main.fragment_chart.view.*
 
 /**

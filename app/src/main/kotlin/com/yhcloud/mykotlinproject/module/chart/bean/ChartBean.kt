@@ -1,6 +1,6 @@
 package com.yhcloud.mykotlinproject.module.chart.bean
 
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 
 /**
  *

@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.databinding.FragmentLoginBinding
 import com.yhcloud.mykotlinproject.module.login.ViewModelFactory

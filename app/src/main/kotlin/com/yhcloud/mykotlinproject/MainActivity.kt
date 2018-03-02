@@ -2,9 +2,9 @@ package com.yhcloud.mykotlinproject
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.yhcloud.mykotlinproject.base.activity.BaseActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * @20170301
  *
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

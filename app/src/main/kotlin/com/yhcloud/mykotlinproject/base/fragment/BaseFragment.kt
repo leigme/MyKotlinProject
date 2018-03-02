@@ -1,4 +1,4 @@
-package com.yhcloud.mykotlinproject.base
+package com.yhcloud.mykotlinproject.base.fragment
 
 import android.support.v4.app.Fragment
 import android.view.MotionEvent

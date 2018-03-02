@@ -1,4 +1,4 @@
-package com.yhcloud.mykotlinproject.module.web.view
+package com.yhcloud.mykotlinproject.base.view.web
 
 import android.os.Bundle
 import android.util.Log
@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.yhcloud.mykotlinproject.R
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 import kotlinx.android.synthetic.main.fragment_web.view.*
 import android.webkit.WebView
 import android.webkit.WebViewClient
-
 
 
 /**
@@ -23,7 +22,7 @@ import android.webkit.WebViewClient
 
 class WebFragment: BaseFragment("HTML5页面") {
 
-    var url: String = ""
+    lateinit var webBean: WebBean
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -31,8 +30,8 @@ class WebFragment: BaseFragment("HTML5页面") {
 
         view.setOnTouchListener(this)
 
-        if ("" == url) {
-            print("Url地址为空...")
+        if (0 == webBean.type) {
+            print("类型设置错误...")
             return view
         }
 
@@ -43,7 +42,18 @@ class WebFragment: BaseFragment("HTML5页面") {
 
         view.wvContent.webViewClient = MyWebViewClient()
 
-        view.wvContent.loadUrl(url)
+        when (webBean.type) {
+            1 -> {
+                view.wvContent.loadUrl(webBean.content)
+            }
+            2 -> {
+                view.wvContent.loadDataWithBaseURL(null, webBean.content, "textml", "utf-8", null)
+            }
+            else -> {
+                print("类型设置无效...")
+                return view
+            }
+        }
 
         return view
     }
@@ -61,19 +71,5 @@ class WebFragment: BaseFragment("HTML5页面") {
             //     super.onReceivedError(view, errorCode, description, failingUrl);
             //  Toast.makeText(this,"网页加载错误！",0).show();
         }
-    }
-
-    fun onBackPressed(): Boolean {
-
-        return if (view!!.wvContent.canGoBack()) {
-            view!!.wvContent.goBack()
-            Log.v("webView.goBack()", "webView.goBack()")
-            true
-
-        } else {
-            Log.v("Conversatio退出", "Conversatio退出")
-            false
-        }
-
     }
 }

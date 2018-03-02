@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.yhcloud.mykotlinproject.R
-import com.yhcloud.mykotlinproject.base.AdaptListener
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.listener.AdaptListener
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 import com.yhcloud.mykotlinproject.module.book.adapter.BookAdapter
 import com.yhcloud.mykotlinproject.module.book.bean.BookBean
-import com.yhcloud.mykotlinproject.module.web.view.WebFragment
+import com.yhcloud.mykotlinproject.base.view.web.WebFragment
 import kotlinx.android.synthetic.main.fragment_viewholder.view.*
 
 /**

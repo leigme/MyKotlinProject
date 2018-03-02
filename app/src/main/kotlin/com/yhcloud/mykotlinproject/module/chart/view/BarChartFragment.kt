@@ -8,7 +8,7 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.yhcloud.mykotlinproject.R
-import com.yhcloud.mykotlinproject.base.BaseFragment
+import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
 import kotlinx.android.synthetic.main.fragment_bar.view.*
 
 /**

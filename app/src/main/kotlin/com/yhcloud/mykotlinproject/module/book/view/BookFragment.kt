@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.yhcloud.mykotlinproject.R
 import com.yhcloud.mykotlinproject.base.listener.AdaptListener
 import com.yhcloud.mykotlinproject.base.fragment.BaseFragment
+import com.yhcloud.mykotlinproject.base.view.web.WebBean
 import com.yhcloud.mykotlinproject.module.book.adapter.BookAdapter
 import com.yhcloud.mykotlinproject.module.book.bean.BookBean
 import com.yhcloud.mykotlinproject.base.view.web.WebFragment
@@ -42,7 +43,8 @@ class BookFragment: BaseFragment("我的藏书阁"), AdaptListener {
     private fun initBookBeans(): List<BookBean> {
 
         val wf = WebFragment()
-        wf.url = "https://array-huang.gitbooks.io/centos-book/content/"
+        val wbCentOS = WebBean(1, "https://array-huang.gitbooks.io/centos-book/content/")
+        wf.webBean = wbCentOS
 
         val centOS = BookBean(0, 0, "", wf, "CentOS")
 

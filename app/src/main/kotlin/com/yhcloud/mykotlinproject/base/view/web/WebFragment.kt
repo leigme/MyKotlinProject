@@ -47,7 +47,7 @@ class WebFragment: BaseFragment("HTML5页面") {
                 view.wvContent.loadUrl(webBean.content)
             }
             2 -> {
-                view.wvContent.loadDataWithBaseURL(null, webBean.content, "textml", "utf-8", null)
+                view.wvContent.loadDataWithBaseURL(null, webBean.content, "text/html", "utf-8", null)
             }
             else -> {
                 print("类型设置无效...")

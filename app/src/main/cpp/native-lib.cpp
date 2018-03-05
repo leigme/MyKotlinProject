@@ -5,7 +5,7 @@ extern "C"
 JNIEXPORT jstring
 
 JNICALL
-Java_com_yhcloud_mykotlinproject_MainActivity_stringFromJNI(
+Java_me_leig_mykotlinproject_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Kotlin Project";

@@ -4,10 +4,12 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.yhcloud.mykotlinproject"
+        applicationId "me.leig.mykotlinproject"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -64,4 +66,6 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
     kapt "com.android.databinding:compiler:2.3.0"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    /******************* 功能模块 *******************/
+    compile project(':simplenetty')
 }

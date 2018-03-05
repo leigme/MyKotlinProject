@@ -6,7 +6,7 @@
 
         <variable
             name="viewmodel"
-            type="com.yhcloud.mykotlinproject.module.login.data.LoginModel" />
+            type="me.leig.mykotlinproject.module.login.data.LoginModel" />
     </data>
 
     <LinearLayout

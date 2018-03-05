@@ -1,4 +1,4 @@
-package me.leig.mykotlinproject.module.login
+package me.leig.mykotlinproject.base
 
 import android.arch.lifecycle.ViewModelProvider
 import android.annotation.SuppressLint

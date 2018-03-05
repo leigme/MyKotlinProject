@@ -1,1 +1,1 @@
-include ':app', ':simplenetty'
+include ':app', ':simplenetty', ':comm'

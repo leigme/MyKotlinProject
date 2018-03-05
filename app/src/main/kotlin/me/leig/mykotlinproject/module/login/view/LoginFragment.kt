@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import me.leig.mykotlinproject.base.fragment.BaseFragment
 import me.leig.mykotlinproject.R
 import me.leig.mykotlinproject.databinding.FragmentLoginBinding
-import me.leig.mykotlinproject.module.login.ViewModelFactory
+import me.leig.mykotlinproject.base.ViewModelFactory
 import me.leig.mykotlinproject.module.login.data.LoginModel
 import me.leig.mykotlinproject.module.login.utils.SnackbarUtils
 import kotlin.concurrent.thread

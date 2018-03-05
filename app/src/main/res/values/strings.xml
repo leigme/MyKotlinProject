@@ -8,4 +8,5 @@
 
     <string name="login_name_not_input">用户账户不能为空</string>
     <string name="login_pass_not_input">用户密码不能为空</string>
+
 </resources>

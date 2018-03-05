@@ -67,5 +67,6 @@ dependencies {
     kapt "com.android.databinding:compiler:2.3.0"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     /******************* 功能模块 *******************/
+    compile project(':comm')
     compile project(':simplenetty')
 }

@@ -66,6 +66,9 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
     kapt "com.android.databinding:compiler:2.3.0"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    /******************* 第三方包 *******************/
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
     /******************* 功能模块 *******************/
     compile project(':comm')
     compile project(':simplenetty')

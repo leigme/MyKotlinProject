@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_url"
+            android:hint="下载地址: "
+            android:text="http://www.k12chn.com/uploads/tempfiles/resources/RES20180310/RES201803101608155939.pdf" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:text="下载"
+            android:textSize="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/et_filepath"
+            android:hint="文件名称: "
+            android:text="temp.pdf" />
+
+        <Button
+            android:id="@+id/filebtn"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:text="下载"
+            android:textSize="16dp" />
+
+        <me.leig.mykotlinproject.base.view.pdf.AndroidPdf
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/ap_view"/>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

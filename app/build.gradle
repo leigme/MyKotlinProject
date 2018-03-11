@@ -68,7 +68,7 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     /******************* 第三方包 *******************/
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    compile 'com.github.barteksc:android-pdf-viewer:2.8.2'
     /******************* 功能模块 *******************/
     compile project(':comm')
     compile project(':simplenetty')

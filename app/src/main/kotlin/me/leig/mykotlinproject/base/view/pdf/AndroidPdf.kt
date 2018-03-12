@@ -2,7 +2,7 @@ package me.leig.mykotlinproject.base.view.pdf
 
 import android.content.Context
 import android.util.AttributeSet
-import com.joanzapata.pdfview.PDFView
+import com.github.barteksc.pdfviewer.PDFView
 
 /**
  *

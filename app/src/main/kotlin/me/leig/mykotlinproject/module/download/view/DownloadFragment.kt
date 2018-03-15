@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.github.barteksc.pdfviewer.listener.OnErrorListener
+import com.github.barteksc.pdfviewer.listener.OnPageErrorListener
 import kotlinx.android.synthetic.main.fragment_download.*
 import kotlinx.android.synthetic.main.fragment_download.view.*
 import me.leig.mykotlinproject.R
@@ -53,9 +55,23 @@ class DownloadFragment: BaseFragment("下载页面") {
                     view.ap_view.fromFile(File(filePath))
                             .pages(0, 2, 1, 3, 3, 3)
                             .defaultPage(1)
-                            .showMinimap(false)
-                            .enableSwipe(true)
-                            .onLoad { nbPages -> Log.e("PDF", "载入进度: $nbPages"); }
+                            .enableSwipe(true) // allows to block changing pages using swipe
+                            .swipeHorizontal(false)
+                            .enableDoubletap(true)
+                            .defaultPage(0)
+                            .onError { t ->
+                                println(t!!.message)
+                            }
+                            .onPageError { page, t ->
+                                println("错误的页面是: $page")
+                                println(t!!.message)
+                            }
+                            .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
+                            .password(null)
+                            .scrollHandle(null)
+                            .enableAntialiasing(true) // improve rendering a little bit on low-res screens
+                            // spacing between pages in dp. To define spacing color, set view background
+                            .spacing(0)
                             .load()
                 }
                 else -> {
@@ -75,9 +91,23 @@ class DownloadFragment: BaseFragment("下载页面") {
                         .absolutePath + "/" + et_filepath.text.toString()))
                         .pages(0, 2, 1, 3, 3, 3)
                         .defaultPage(1)
-                        .showMinimap(false)
-                        .enableSwipe(true)
-                        .onLoad { nbPages -> Log.e("PDF", "载入进度: $nbPages"); }
+                        .enableSwipe(true) // allows to block changing pages using swipe
+                        .swipeHorizontal(true)
+                        .enableDoubletap(true)
+                        .defaultPage(0)
+                        .onError { t ->
+                            println(t!!.message)
+                        }
+                        .onPageError { page, t ->
+                            println("错误的页面是: $page")
+                            println(t!!.message)
+                        }
+                        .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
+                        .password(null)
+                        .scrollHandle(null)
+                        .enableAntialiasing(true) // improve rendering a little bit on low-res screens
+                        // spacing between pages in dp. To define spacing color, set view background
+                        .spacing(0)
                         .load()
             } catch (e: Exception) {
                 println("pdf文件格式错误: " + e.message)

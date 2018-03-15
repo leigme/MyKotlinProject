@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/comm" />
             <option value="$PROJECT_DIR$/simplenetty" />
+            <option value="$PROJECT_DIR$/videolibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

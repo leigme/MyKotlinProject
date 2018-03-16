@@ -55,10 +55,10 @@ class PhotoFragment: BaseFragment("照片墙"), View.OnClickListener {
             view.visibility = View.GONE
 
             if (btnStartTime && !btnEndTime) {
-                startTime = stringTime(year, month, day)
+                startTime = stringTime(year, month + 1, day)
                 photoView.tv_starttime.text = "开始时间: $startTime"
             } else if (!btnStartTime && btnEndTime) {
-                endTime = stringTime(year, month, day)
+                endTime = stringTime(year, month + 1, day)
                 photoView.tv_endtime.text = "结束时间: $endTime"
             }
 

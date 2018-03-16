@@ -73,24 +73,14 @@ class PhotoFragment: BaseFragment("照片墙"), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id) {
             R.id.tv_starttime -> {
-                if (!btnStartTime) {
-                    btnStartTime = true
-                    btnEndTime = false
-                    photoView.dp_time.visibility = View.VISIBLE
-                } else {
-                    btnStartTime = false
-                }
-
+                btnStartTime = true
+                btnEndTime = false
+                photoView.dp_time.visibility = View.VISIBLE
             }
             R.id.tv_endtime -> {
-                if (!btnEndTime) {
-                    btnEndTime = true
-                    btnStartTime = false
-                    photoView.dp_time.visibility = View.VISIBLE
-                } else {
-                    btnEndTime = false
-                }
-
+                btnStartTime = false
+                btnEndTime = true
+                photoView.dp_time.visibility = View.VISIBLE
             }
             R.id.btn_submit -> {
                 Log.e("TAG", "请求数据去了...[$startTime] [$endTime]")
@@ -103,11 +93,19 @@ class PhotoFragment: BaseFragment("照片墙"), View.OnClickListener {
 
     private fun stringTime(year: Int, month: Int, day: Int): String {
 
-        return if (10 > month) {
-            "$year-0$month-$day"
+        val m: String = if (10 > month) {
+            "0$month"
         } else {
-            "$year-$month-$day"
+            "$month"
         }
+
+        val d: String = if (10 > day) {
+            "0$day"
+        } else {
+            "$day"
+        }
+
+        return "$year-$m-$d"
     }
 
 }

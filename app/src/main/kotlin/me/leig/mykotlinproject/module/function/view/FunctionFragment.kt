@@ -16,6 +16,7 @@ import me.leig.mykotlinproject.module.login.view.LoginFragment
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import me.leig.mykotlinproject.module.answer.view.AnswerFragment
 import me.leig.mykotlinproject.module.download.view.DownloadFragment
+import me.leig.mykotlinproject.module.photo.ui.PhotoFragment
 
 /**
  * 功能列表Fragment
@@ -46,7 +47,8 @@ class FunctionFragment : BaseFragment("功能列表"), AdaptListener {
                 FunctionBean(1, BookFragment()),
                 FunctionBean(2, ChartFragment()),
                 FunctionBean(3, DownloadFragment()),
-                FunctionBean(4, AnswerFragment())
+                FunctionBean(4, AnswerFragment()),
+                FunctionBean(5, PhotoFragment())
         )
     }
 

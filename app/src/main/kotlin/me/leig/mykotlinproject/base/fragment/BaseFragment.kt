@@ -1,6 +1,7 @@
 package me.leig.mykotlinproject.base.fragment
 
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.MotionEvent
 import android.view.View
@@ -13,7 +14,10 @@ import android.view.View
  *
  */
  
- abstract class BaseFragment constructor(open var title: String): Fragment(), View.OnTouchListener {
+ abstract class BaseFragment constructor(open val title: String): Fragment(), View.OnTouchListener {
+
+    // 消息发送者
+    open val mHandler = Handler()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.setOnTouchListener(this)

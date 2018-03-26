@@ -1,1 +1,1 @@
-include ':app', ':simplenetty', ':comm', ':videolibrary'
+include ':app', ':simplenetty', ':comm', ':videolibrary', ':baselibrary'
